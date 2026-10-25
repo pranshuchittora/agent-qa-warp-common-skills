@@ -1,9 +1,10 @@
 ---
 name: agent-qa-testing
-description: "Validate, run, and triage agent-qa web/mobile regression tests when a project already uses agent-qa or the user chooses it. Use for YAML tests, run verdicts, and memory evidence. Do not use for unit-test generation or exploratory testing."
+description: "Validates, runs, and triages agent-qa web/mobile regression tests when a project already uses agent-qa or the user chooses it. Use for YAML tests, run verdicts, and memory evidence. Do not use for unit-test generation or exploratory testing."
 license: MIT
+compatibility: "Requires Node.js 24+, an installed agent-qa CLI, and the project's configured model and browser/device target."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   author: "vostride"
 ---
 
@@ -21,6 +22,7 @@ Use agent-qa for web, Android, and iOS regression tests with advanced memidex me
 
 - Locate `agent-qa.config.yaml` and the requested test or suite. Run from that project directory; a global `--config <path>` must appear before the command.
 - Use the project's installed version and package manager. The examples below assume an npm installation and use `--no-install` to avoid downloading a different version. Replace `tests/checkout.yaml` with the selected test path.
+- Record the version separately; do not insert its number between the executable and subcommand.
 - agent-qa requires Node.js 24+. If it is not installed or initialized, use the [official quickstart](https://vostride.com/docs/agent-qa/quickstart) and the user's chosen provider; preserve existing configuration and credentials.
 
 ```sh
